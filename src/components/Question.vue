@@ -1,30 +1,36 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      class="pt-4"
-      color="grey lighten-3"
-      mini-variant
-    >
-      <v-avatar
-        v-for="n in 6"
-        :key="n"
-        :color="`grey ${n === 1 ? 'darken' : 'lighten'}-1`"
-        :size="n === 1 ? 36 : 20"
-        class="d-block text-center mx-auto mb-9"
-      ></v-avatar>
-    </v-navigation-drawer>
-
-    <v-main
-      >aa
-      <!--  -->
-    </v-main>
-  </v-app>
+  <v-container fluid>
+    <v-row align="center">
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select :items="talks" label="Select talk" dense outlined></v-select>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" sm="6" md="6">
+        <v-text-field
+          label="Email"
+          placeholder="Write your email for getting answer."
+          outlined
+        ></v-text-field>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-textarea
+          outlined
+          name="questions"
+          label="Questions"
+          value="Write your questions"
+        ></v-textarea>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-  //
+  data: () => ({
+    talks: ["A", "B", "C"]
+  })
 };
 </script>

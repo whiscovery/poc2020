@@ -1,10 +1,10 @@
 <template>
-  <div class="about"><Question /></div>
+  <div class="about"><Question></Question></div>
 </template>
 <script>
 import Question from "@/components/Question";
 
 export default {
-  components: [Question]
+  components: { Question }
 };
 </script>
